@@ -4,6 +4,10 @@ from github import Github
 from pprint import pprint
 app = Flask(__name__)
 
+@app.errorhandler(401)
+def not_found_error(error):
+    return 'bad request!', 401
+
 
 @app.route('/')
 def login():
@@ -62,8 +66,12 @@ def lo():
 		a=[]
 		for i in x:
 			a.append(i["name"])
-		
-		return render_template('success.html',len=len(a),a=a,name_html=nm,pass_html=password,a_html=a,avatar_html=v)
+		b=[]
+		for i in x:
+			b.append("https://github.com/"+i["full_name"])
+		c=a+b
+		# return render_template('success.html',len=len(a),a=a,len_b=len(b),b=b,name_html=nm,pass_html=password,a_html=a,avatar_html=v)
+		return render_template('success.html',len=len(c),c=c,name_html=nm,pass_html=password,a_html=a,avatar_html=v)
 
 
 if __name__ == '__main__':

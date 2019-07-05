@@ -27,7 +27,7 @@
 <body>
 	<div id="avatar">
 
-<img src={{avatar_html}} alt="HTML5 Icon" style="width:128px;height:128px;">
+<img title ='profile'src={{avatar_html}} alt="HTML5 Icon" style="width:128px;height:128px;">
 </div>
 	<!-- Repo name -->
 	<table style="width:20%">
@@ -40,20 +40,14 @@
   
 </table>
 	<div id="Id">
+	
 	<ul>
-		{%for i in range(0, len)%} 
-		<li>{{a[i]}}</li> 
+		{%for i in range(0, len//2)%}
+
+		<li><a href="{{c[(len//2)+i]}}">{{c[i]}}</a> </li>
 		{%endfor%} 
-  <!-- FORKES count -->
-	<!-- </ul> </div>
-	</table>
-	<div id="Id">
-	<ul>
-		{%for i in range(0, len)%} 
-		<li>{{a[i]}}</li> 
-		{%endfor%} 
-  
-	</ul> </div> -->
+	</ul>
+
 username  {{name_html}}<br>
 password  {{pass_html}}<br>
 <br><br>{{a_html}}
