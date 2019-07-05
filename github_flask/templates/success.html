@@ -3,50 +3,73 @@
 <head>
 	<title>login successful</title>
 	<style >
-	#Id{
-		padding-top: 30px;
-		padding-left: 300px;
-	}
-	/*#Id1{
-		padding-top: 30px;
-		padding-left: 500px;
-	}*/
-	 th{
+	th{
   
-  text-align: left;
+  padding-top: 10px;
   padding-left: 320px;
 }
+	#Id{
+		 text-align: left;
+		 
+		padding-top: 30px;
+		padding-left: 300px;
+		letter-spacing:2 px;
+		font-size:15px;
+		position:relative;
+		left:25px;
+		top:10px;"
+	}
+	
+
 /*Aatar */
  #avatar{
+  border-radius: 50%;
   
-  padding-top: 100px;
   padding-left: 100px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
 </style>
 </head>
 <body>
-	<div id="avatar">
-
-<img title ='profile'src={{avatar_html}} alt="HTML5 Icon" style="width:128px;height:128px;">
-</div>
+	
+<span>
+<img id="avatar" title ='profile'src={{avatar_html}} alt="HTML5 Icon" style="width:128px;height:128px;">
+</span>
 	<!-- Repo name -->
-	<table style="width:20%">
-
+	<table>
   <tr>
-    <th>Repo name</th>
-    <th>Forkes</th> 
+   <th>Repo name</th>
+    <th>stars</th> 
+    <th>Watchers</th>
+     <th>Forks</th>
+    <th>stars</th> 
     <th>Forkes</th>
   </tr>
-  
-</table>
-	<div id="Id">
-	
-	<ul>
-		{%for i in range(0, len//2)%}
-
-		<li><a href="{{c[(len//2)+i]}}">{{c[i]}}</a> </li>
-		{%endfor%} 
-	</ul>
+   {%for i in range(0, len//5)%}
+  <tr>
+  	<td><a title="{{c[(len//5)+i]}}" href="{{c[(len//5)+i]}}">{{c[i]}}</a></td>
+  	<td>{{c[(len//3)+i+10]}}</td>
+  	<td>{{c[(len//2)+i+15]}}</td>
+  	<td>{{c[len+i-30]}}</td>
+  	<!-- <td><a title="{{c[(len//2)+i]}}" href="{{c[(len//2)+i]}}">{{c[i]}}</a>
+  	<td><a title="{{c[(len//2)+i]}}" href="{{c[(len//2)+i]}}">{{c[i]}}</a>
+  	<td><a title="{{c[(len//2)+i]}}" href="{{c[(len//2)+i]}}">{{c[i]}}</a>
+    <td><a title="{{c[(len//2)+i]}}" href="{{c[(len//2)+i]}}">{{c[i]}}</a></tr> -->
+  {%endfor%}
 
 username  {{name_html}}<br>
 password  {{pass_html}}<br>

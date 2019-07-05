@@ -37,7 +37,7 @@ def login():
 		# x=response.json()
 		# pprint(x)
 		# z=[]
-		# for i in x:
+		# 3for i in x:
 		# 	z.append(i["name"])
 		# return render_template('success.html',name_html=nm,pass_html=password)
 @app.route('/login')
@@ -48,9 +48,11 @@ def lo():
 		nm=request.args.get("username")
 		password=request.args.get("pass")
 		g = Github(nm, password)
+	
 
 		
 	except:
+		flash("Authorization failed.")
 		msg = "wrong password"  
 	finally:
 		user = g.get_user()
@@ -66,10 +68,24 @@ def lo():
 		a=[]
 		for i in x:
 			a.append(i["name"])
+		#repo url
 		b=[]
 		for i in x:
 			b.append("https://github.com/"+i["full_name"])
-		c=a+b
+		#Stars count of repo
+		e=[]
+		for i in x:
+			e.append(i["stargazers_count"])
+		#watchers count of repo
+		f=[]
+		for i in x:
+			f.append(i["watchers_count"])
+		#forks count of repo
+		g=[]
+		for i in x:
+			g.append(i["forks"])
+		c=a+b+e+f+g
+
 		# return render_template('success.html',len=len(a),a=a,len_b=len(b),b=b,name_html=nm,pass_html=password,a_html=a,avatar_html=v)
 		return render_template('success.html',len=len(c),c=c,name_html=nm,pass_html=password,a_html=a,avatar_html=v)
 
