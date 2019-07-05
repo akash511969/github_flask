@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>login successful</title>
+	<style >
+	#Id{
+		padding-top: 30px;
+		padding-left: 300px;
+	}
+	/*#Id1{
+		padding-top: 30px;
+		padding-left: 500px;
+	}*/
+	 th{
+  
+  text-align: left;
+  padding-left: 320px;
+}
+/*Aatar */
+ #avatar{
+  
+  padding-top: 100px;
+  padding-left: 100px;
+}
+</style>
 </head>
 <body>
-	username  {{name_html}}<br>
-	password  {{pass_html}}<br>
-	<br>{{a_html}}
+	<div id="avatar">
+
+<img src={{avatar_html}} alt="HTML5 Icon" style="width:128px;height:128px;">
+</div>
+	<!-- Repo name -->
+	<table style="width:20%">
+
+  <tr>
+    <th>Repo name</th>
+    <th>Forkes</th> 
+    <th>Forkes</th>
+  </tr>
+  
+</table>
+	<div id="Id">
+	<ul>
+		{%for i in range(0, len)%} 
+		<li>{{a[i]}}</li> 
+		{%endfor%} 
+  <!-- FORKES count -->
+	<!-- </ul> </div>
+	</table>
+	<div id="Id">
+	<ul>
+		{%for i in range(0, len)%} 
+		<li>{{a[i]}}</li> 
+		{%endfor%} 
+  
+	</ul> </div> -->
+username  {{name_html}}<br>
+password  {{pass_html}}<br>
+<br><br>{{a_html}}
 
 </body>
 </html>
